@@ -1,35 +1,24 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function LED1_On() {
-	var msg="on";
-    message = new Paho.MQTT.Message(msg);
-    message.destinationName = "pemaldonado.fie@unach.edu.ec/test";
-    client.send(message);
-  
-}
-function LED1_Off(){	
-	var msg="off";
-    message = new Paho.MQTT.Message(msg);
-    message.destinationName = "pemaldonado.fie@unach.edu.ec/test";
-    client.send(message);
-}
+
+
+
 
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
-  
-  client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
-
+   client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
   // set callback handlers
   client.onConnectionLost = onConnectionLost;
   client.onMessageArrived = onMessageArrived;
   var options = {
-    useSSL: false,
+   useSSL: false,
     userName: "pemaldonado.fie@unach.edu.ec",
-    password: "625366236",
+    password: "Paul625366236",
     onSuccess:onConnect,
     onFailure:doFail
   }
+
 
   // connect the client
   client.connect(options);
@@ -39,9 +28,9 @@ function LED1_Off(){
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("nelsonbenjamin05@gmail.com/ts1");
-    message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "pemaldonado.fie@unach.edu.ec/test";
+    client.subscribe("pemaldonado.fie@unach.edu.ec/pagweb");
+    message = new Paho.MQTT.Message("Conectado..........!!!..!!.!..");
+    message.destinationName = "pemaldonado.fie@unach.edu.ec/psd";
     client.send(message);
 	
   }
@@ -58,8 +47,28 @@ function LED1_Off(){
     }
   }
 
+
+
+
+
   // called when a message arrives
-  function onMessageArrived(message) {
-	  document.getElementById("sensor").innerHTML=message.payloadString;
-  }
-  
+
+function onMessageArrived(message) {
+	 texto=(message.payloadString);
+}
+
+
+
+function LED_PRENDIDO_1(){
+	console.log("Led Prendido")
+	message=new Paho.MQTT.Message("led1P");
+	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
+	client.send(message);
+}
+
+function LED_APAGADO_1(){
+	console.log("Led Prendido")
+	message=new Paho.MQTT.Message("led1A");
+	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
+	client.send(message);
+}
