@@ -14,7 +14,7 @@
   var options = {
    useSSL: false,
     userName: "pemaldonado.fie@unach.edu.ec",
-    password: "Paul625366236",
+    password: "625366236",
     onSuccess:onConnect,
     onFailure:doFail
   }
@@ -55,20 +55,21 @@
 
 function onMessageArrived(message) {
 	 texto=(message.payloadString);
+	 document.getElementById("estado").innerHTML=texto;
 }
 
 
 
-function LED_PRENDIDO_1(){
+function LED_PRENDIDO(){
 	console.log("Led Prendido")
-	message=new Paho.MQTT.Message("led1P");
+	message=new Paho.MQTT.Message("ledP");
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
 
-function LED_APAGADO_1(){
+function LED_APAGADO(){
 	console.log("Led Prendido")
-	message=new Paho.MQTT.Message("led1A");
+	message=new Paho.MQTT.Message("ledA");
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
