@@ -52,14 +52,16 @@
 
 
   // called when a message arrives
-
+  // visualizacion de los estados del led
+  
 function onMessageArrived(message) {
 	 texto=(message.payloadString);
 	 document.getElementById("estado").innerHTML=texto;
 }
 
 
-
+  // envio de las acciones de los botones hacia PROTEUS
+  
 function LED_PRENDIDO(){
 	console.log("Led Prendido")
 	message=new Paho.MQTT.Message("ledP");
