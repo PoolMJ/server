@@ -75,3 +75,16 @@ function LED_APAGADO(){
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
+
+function onMessageArrived(message) {
+	 identificador=(message.payloadString).split(" ")[0];
+	 dato=(message.payloadString).split(" ")[1];
+	 console.log("hora recibida")
+	 if(identificador=="H")
+		 document.getElementById("hora").innerHTML = dato;
+	 if(identificador=="M")
+		 document.getElementById("minuto").innerHTML = dato;
+	 if(identificador=="S")
+		 document.getElementById("segundo").innerHTML = dato;
+  }
+
