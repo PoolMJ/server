@@ -62,16 +62,16 @@ function onMessageArrived(message) {
 
   // envio de las acciones de los botones hacia PROTEUS
   
-function LED_PRENDIDO(){
-	console.log("Led Prendido");
-		message=new Paho.MQTT.Message("ledP");
+function SENSOR_1(){
+	console.log("Sensor 1");
+		message=new Paho.MQTT.Message("sensor1");
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
 
-function LED_APAGADO(){
-	console.log("Led Apagado");
-		message=new Paho.MQTT.Message("ledA");
+function SENSOR_2(){
+	console.log("Sensor 2");
+		message=new Paho.MQTT.Message("sensor2");
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
