@@ -54,11 +54,11 @@
   // called when a message arrives
   // visualizacion de los estados del led
   
-function onMessageArrived(message) {
-	 texto=(message.payloadString);
-	 texto2=(message.payloadString);
-	 document.getElementById("estado1").innerHTML=texto;
-	 document.getElementById("estado2").innerHTML=texto2;
+console.log(message.payloadString);
+	text=(message.payloadString)split(":")[0];
+	text2=(message.payloadString).split(":")[1];
+	document.getElementById("respuesta").innerHTML = text;
+	document.getElementById("respuesta2").innerHTML = text2;
 }
 
 
