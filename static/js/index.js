@@ -56,9 +56,9 @@
   
 function onMessageArrived(message) {
 	 texto=(message.payloadString)split(":")[0];
-	 texto2=(message.payloadString)split(":")[1];
+//	 texto2=(message.payloadString)split(":")[1];
 	 document.getElementById("estado1").innerHTML=texto;
-	 document.getElementById("estado2").innerHTML=texto2;
+//	 document.getElementById("estado2").innerHTML=texto2;
 }
 
 
