@@ -55,8 +55,10 @@
   // visualizacion de los estados del led
   
 function onMessageArrived(message) {
-	 texto=(message.payloadString);
-	 document.getElementById("estado").innerHTML=texto;
+	 texto=(message.payloadString)split(":")[0];
+	 texto2=(message.payloadString)split(":")[1];
+	 document.getElementById("estado1").innerHTML=texto;
+	 document.getElementById("estado2").innerHTML=texto2;
 }
 
 
