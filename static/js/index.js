@@ -52,13 +52,13 @@
 
 
   // called when a message arrives
-  // visualizacion de los estados del led
+  // visualizacion de los estados 
   
-console.log(message.payloadString);
-	text=(message.payloadString)split(":")[0];
-	text2=(message.payloadString).split(":")[1];
-	document.getElementById("estado1").innerHTML = text;
-	document.getElementById("estado1").innerHTML = text2;
+function onMessageArrived(message) {
+	 texto=(message.payloadString);
+	 texto2=(message.payloadString);
+	 document.getElementById("estado1").innerHTML=texto;
+	 document.getElementById("estado2").innerHTML=texto2;
 }
 
 
@@ -88,5 +88,5 @@ function onMessageArrived(message) {
 		 document.getElementById("minuto").innerHTML = dato;
 	 if(identificador=="S")
 		 document.getElementById("segundo").innerHTML = dato;
-  }
+	}
 
