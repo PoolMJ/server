@@ -57,8 +57,8 @@
 console.log(message.payloadString);
 	text=(message.payloadString)split(":")[0];
 	text2=(message.payloadString).split(":")[1];
-	document.getElementById("respuesta").innerHTML = text;
-	document.getElementById("respuesta2").innerHTML = text2;
+	document.getElementById("estado1").innerHTML = text;
+	document.getElementById("estado1").innerHTML = text2;
 }
 
 
